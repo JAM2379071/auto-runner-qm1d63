@@ -1,0 +1,15 @@
+name: AutoVM
+on: workflow_dispatch
+
+jobs:
+  runner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start SSHX
+        run: |
+          echo "STARTING_SSHX"
+          curl -sSf https://sshx.io/get | sh -s -- -q
+          echo "SSHX_READY"
+      
+      - name: Keep Alive
+        run: sleep 21000
